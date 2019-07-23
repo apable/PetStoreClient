@@ -1,0 +1,22 @@
+<label >ENTER PET INFORMATION</label>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="pet.petName" 
+          class="form-control" id="name" name="name" placeholder="Enter pet name"
+          required #name="ngModel">
+      </div>
+      
+      <div class="form-group">
+        <label for="color">Color</label>
+        <input type="text" [(ngModel)]="pet.petColor" 
+          class="form-control" id="color" name="color" placeholder="Enter pet color"
+          required #color="ngModel">
+      
+      </div>
+      <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
+    </form> 
+  </div>
+</div>

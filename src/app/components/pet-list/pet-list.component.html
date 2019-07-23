@@ -1,0 +1,19 @@
+  <label >PET LIST</label>
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Color</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pet of pets">
+          <td>{{ pet.petName }}</td>
+          <td>{{ pet.petColor }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> 

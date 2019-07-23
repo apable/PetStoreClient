@@ -1,0 +1,19 @@
+  <label >PERSON LIST</label>
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of persons">
+          <td>{{ person.personName }}</td>
+          <td>{{ person.personAge }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> 

@@ -1,0 +1,44 @@
+ <div>
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="(isLoggedIn | async)" >
+    <div class="navbar-nav">
+         <a class="nav-item nav-link" routerLink="/addPerson">Add person</a>
+        <a class="nav-item nav-link" routerLink="/addPet">Add pet </a>
+        <a class="nav-item nav-link" routerLink="/getPerson">Get person</a>
+        <a class="nav-item nav-link " routerLink="/getPet">Get pet</a>
+        <a class="nav-item nav-link"  style='margin-left: 900px;' (click)="authenticationService.logout()">Logout</a>
+    </div>
+</nav>
+                <router-outlet></router-outlet>
+</div>
+
+<div class="jumbotron" style="background-color:transparent">
+    <div class="container">
+                <router-outlet></router-outlet>
+    </div>
+</div>  
+
+
+<!-- 
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark my-5">
+        <div class="card-body">
+          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+          <ul class="text-center list-inline py-3">
+       
+            <li class="list-inline-item"><a routerLink="/addPerson" class="btn btn-info">Add person</a></li>
+            <li class="list-inline-item"><a routerLink="/addPet" class="btn btn-info">Add pet</a></li>
+            <li class="list-inline-item"><a routerLink="/getPerson" class="btn btn-info">Get person</a></li>
+            <li class="list-inline-item"><a routerLink="/getPet" class="btn btn-info">Get pet</a></li>
+            <li class="list-inline-item"><a  (click)="authenticationService.logout()" class="btn btn-info">Logout</a></li>
+            
+            
+          </ul>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+ -->
