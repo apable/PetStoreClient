@@ -6,8 +6,12 @@ import { PersonFormComponent } from './components/person-form/person-form.compon
 import { PersonListComponent } from './components/person-list/person-list.component';
 import { PetFormComponent } from './components/pet-form/pet-form.component';
 import { PetListComponent } from './components/pet-list/pet-list.component';
-const routes: Routes = [ { path: 'home', component: HomeComponent},
-                         { path: 'login', component: LoginComponent },
+import { AuthGuard } from './auth.guard';
+
+const routes: Routes = [ 
+                        { path: '', component: HomeComponent, pathMatch: 'full' , canActivate: [AuthGuard]},
+						 {path: 'home', component: HomeComponent , canActivate: [AuthGuard]},
+                         { path: 'login', component: LoginComponent  },
                          { path: 'addPerson', component: PersonFormComponent },
                          { path: 'getPerson', component: PersonListComponent },
                          { path: 'addPet', component: PetFormComponent },

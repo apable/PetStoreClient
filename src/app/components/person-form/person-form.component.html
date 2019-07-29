@@ -1,17 +1,19 @@
 <label >ENTER PERSON INFORMATION</label>
 <div class="card my-5">
-  <div class="card-body">
+  <div class="card-body bg-light">
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" [(ngModel)]="person.personName" 
+      <div class="form-group required">
+        <label class="control-label" for="name" >Name</label>
+        <input type="text" name="onlyalphabet" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"
+        autocomplete="off" [(ngModel)]="person.personName" 
           class="form-control" id="name" name="name" placeholder="Enter your name"
           required #name="ngModel">
       </div>
       
       <div class="form-group">
         <label for="age">Age</label>
-        <input type="text" [(ngModel)]="person.personAge" 
+        <input type="number" min="1" max="120" oninput="this.value=(this.value<Number(this.min) || this.value> Number(this.max))  ? '' : this.value;"
+ 			[(ngModel)]="person.personAge" 
           class="form-control" id="age" name="age" placeholder="Enter your age"
           required #age="ngModel">
       

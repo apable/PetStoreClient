@@ -21,10 +21,11 @@ export class PersonFormComponent implements OnInit {
 		
 	  this.petStoreService.savePerson(this.person ).subscribe (
 			  data =>{
+				  alert(this.person.personName+' added successfully.');
 				  this.router.navigate(['/home']);
 			  },
 			  error =>{
-				  
+				  alert('Failed to add person details.');
 			  }
 		);
   	}

@@ -12,16 +12,16 @@ export class PetStoreService {
   constructor(private http: HttpClient) { }
   
   public savePerson (person  : Person) {
-	  return this.http.post<Person> ('http://localhost:8080/addPerson', person);
+	  return this.http.post<Person> ('http://localhost:8080/persons', person);
   }
   public savePet (pet  : Pet) {
-	  return this.http.post<Pet> ('http://localhost:8080/addPet', pet);
+	  return this.http.post<Pet> ('http://localhost:8080/pets', pet);
   }
   public findAllPersons(): Observable<Person[]> {
-	    return this.http.get<Person[]>('http://localhost:8080/getPerson');
+	    return this.http.get<Person[]>('http://localhost:8080/persons');
 	  }
   public findAllPets(): Observable<Pet[]> {
-	    return this.http.get<Pet[]>('http://localhost:8080/getPet');
+	    return this.http.get<Pet[]>('http://localhost:8080/pets');
 	  }
   
   

@@ -1,10 +1,10 @@
 <label >ENTER PET INFORMATION</label>
-<div class="card my-5">
-  <div class="card-body">
+<div class="card my-5 ">
+  <div class="card-body bg-light">
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" [(ngModel)]="pet.petName" 
+      <div class="form-group required">
+        <label class="control-label" for="name">Name</label>
+        <input type="text"  autocomplete="off" [(ngModel)]="pet.petName" 
           class="form-control" id="name" name="name" placeholder="Enter pet name"
           required #name="ngModel">
       </div>

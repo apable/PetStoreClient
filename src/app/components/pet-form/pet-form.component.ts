@@ -20,10 +20,11 @@ export class PetFormComponent implements OnInit {
 		
 	  this.petStoreService.savePet(this.pet ).subscribe (
 			  data =>{
+				  alert(this.pet.petName+' added successfully.');
 				  this.router.navigate(['/home']);
 			  },
 			  error =>{
-				  
+				  alert('Failed to add pet details.');
 			  }
 		);
   	}

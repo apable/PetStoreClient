@@ -15,9 +15,14 @@ export class PetListComponent  implements OnInit{
 	  }
 	 
 	  ngOnInit() {
-	    this.petStoreService.findAllPets().subscribe(data => {
+	    this.petStoreService.findAllPets().subscribe(
+	      data =>{
 	      this.pets = data;
-	    });
+	    },
+		  error =>{
+			  alert('Unable to find records.');
+		  }
+	    );
 	  }
 
 }

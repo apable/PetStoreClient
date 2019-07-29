@@ -13,9 +13,14 @@ export class PersonListComponent  implements OnInit{
 	}
 	
 	ngOnInit() {
-	  this.petStoreService.findAllPersons().subscribe(data => {
+	  this.petStoreService.findAllPersons().subscribe(data => 
+	  {
 	    this.persons = data;
-	  });
+	  },
+	  error =>{
+		  alert('Unable to find records.');
+	  }
+	  );
 	}
 
 }

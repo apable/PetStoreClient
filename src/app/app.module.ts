@@ -15,6 +15,9 @@ import { PersonFormComponent } from './components/person-form/person-form.compon
 import { PersonListComponent } from './components/person-list/person-list.component';
 import { PetFormComponent } from './components/pet-form/pet-form.component';
 import { PetListComponent } from './components/pet-list/pet-list.component';
+import { AuthGuard } from './auth.guard';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,7 @@ import { PetListComponent } from './components/pet-list/pet-list.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [UserService, AlertService , AuthenticationService],
+  providers: [UserService, AlertService , AuthenticationService ,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
