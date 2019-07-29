@@ -1,11 +1,15 @@
- <div>
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="(isLoggedIn | async)" >
+<div class="text-center" style="background-color: #FF9800">
+	<label class="text-white" >PET STORE</label>
+	
+	<nav class="navbar navbar-expand navbar-dark"
+		*ngIf="(isLoggedIn | async)">
+
     <div class="navbar-nav">
-         <a class="nav-item nav-link" routerLink="/addPerson">Add person</a>
-        <a class="nav-item nav-link" routerLink="/addPet">Add pet </a>
-        <a class="nav-item nav-link" routerLink="/getPerson">Get person</a>
-        <a class="nav-item nav-link " routerLink="/getPet">Get pet</a>
-        <a class="nav-item nav-link"  style='margin-left: 900px;' (click)="authenticationService.logout()">Logout</a>
+			<a class="nav-item nav-link" style="color: #000000" routerLink="/addPerson">Add person</a> 
+			<a class="nav-item nav-link" style="color: #000000" routerLink="/addPet">Add pet </a>
+			<a class="nav-item nav-link" style="color: #000000" routerLink="/getPerson">View persons</a> 
+			<a class="nav-item nav-link" style="color: #000000" routerLink="/getPet">View pets</a> 
+			<a class="nav-item nav-link" style='margin-left: 900px; color:#000000' (click)="authenticationService.logout()">Logout</a>
     </div>
 </nav>
                 <router-outlet></router-outlet>
