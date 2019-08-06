@@ -1,22 +1,37 @@
 <div class="text-center" style="background-color: #FF9800">
-	<label class="text-white" >PET STORE</label>
+	<h1>PET STORE</h1>
+	<!-- <label class="text-white" >PET STORE</label> -->
 	
-	<nav class="navbar navbar-expand navbar-dark"
-		*ngIf="(isLoggedIn | async)">
-
-    <div class="navbar-nav">
+	<nav class="navbar navbar-expand-md navbar-dark " *ngIf="(authenticationService.isUserLoggedIn() )">
+ 
+    <!-- <div class="navbar-nav">
 			<a class="nav-item nav-link" style="color: #000000" routerLink="/addPerson">Add person</a> 
 			<a class="nav-item nav-link" style="color: #000000" routerLink="/addPet">Add pet </a>
 			<a class="nav-item nav-link" style="color: #000000" routerLink="/getPerson">View persons</a> 
 			<a class="nav-item nav-link" style="color: #000000" routerLink="/getPet">View pets</a> 
-			<a class="nav-item nav-link" style='margin-left: 900px; color:#000000' (click)="authenticationService.logout()">Logout</a>
-    </div>
+			<a class="nav-item nav-link  navbar-collapse justify-content-end" style=' color:#000000' (click)="authenticationService.logout()">Logout</a>
+     </div>  -->
+     
+     <!-- <div class="navbar-brand">-->
+     <ul class="navbar-nav">
+            <li ><a routerLink="/addPerson" style="color: #000000" class="nav-link">Add person</a></li>
+            <li ><a routerLink="/addPet"  style="color: #000000" class="nav-link">Add pet</a></li>
+            <li ><a routerLink="/getPerson"  style="color: #000000" class="nav-link">Get person</a></li>
+            <li ><a routerLink="/getPet" style="color: #000000" class="nav-link">Get pet</a></li>
+     </ul>
+     <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><a style="color: #000000" (click)="authenticationService.logout()" class="nav-link">Logout</a></li>
+     </ul>
+   <!--   </div> -->
+    
+    
 </nav>
-                <router-outlet></router-outlet>
+                <!-- <router-outlet></router-outlet> -->
 </div>
 
-<div class="jumbotron" style="background-color:transparent">
-    <div class="container">
+<div class="jumbotron " style="background-color:transparent">
+    <div class="container my-custom-container">
+    
                 <router-outlet></router-outlet>
     </div>
 </div>  

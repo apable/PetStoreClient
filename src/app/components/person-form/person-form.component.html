@@ -1,24 +1,54 @@
-<label >ENTER PERSON INFORMATION</label>
+<label>ENTER PERSON INFORMATION</label>
 <div class="card my-5">
-  <div class="card-body bg-light">
-    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
-      <div class="form-group required">
-        <label class="control-label" for="name" >Name</label>
-        <input type="text" name="onlyalphabet" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"
-        autocomplete="off" [(ngModel)]="person.personName" 
-          class="form-control" id="name" name="name" placeholder="Enter your name"
-          required #name="ngModel">
-      </div>
-      
-      <div class="form-group">
-        <label for="age">Age</label>
-        <input type="number" min="1" max="120" oninput="this.value=(this.value<Number(this.min) || this.value> Number(this.max))  ? '' : this.value;"
- 			[(ngModel)]="person.personAge" 
-          class="form-control" id="age" name="age" placeholder="Enter your age"
-          required #age="ngModel">
-      
-      </div>
-      <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
-    </form> 
-  </div>
+	<div class="card-body bg-light">
+		<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+			<div class="form-group required">
+				<label class="control-label" for="name">Name</label> <input
+					type="text" name="onlyalphabet"
+					onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"
+					autocomplete="off" [(ngModel)]="person.personName"
+					class="form-control" id="name" name="name" required
+					placeholder="Enter your name" required #name="ngModel">
+			</div>
+
+			<div class="form-group">
+				<label for="age">Age</label> <input type="number" min="1" max="120"
+					oninput="this.value=(this.value<Number(this.min) || this.value> Number(this.max))  ? '' : this.value;"
+					autocomplete="off" [(ngModel)]="person.personAge" class="form-control" id="age"
+					name="age" placeholder="Enter your age" #age="ngModel">
+
+			</div>
+
+			<!-- <div class="form-group">
+				<label for="petName">Pet Name</label> <input type="text"
+					[(ngModel)]="pet.petName" class="form-control" id="petName"
+					name="petName" placeholder="Enter petName" #age="ngModel">
+			</div> -->
+
+
+
+			<div class="form-group">
+				<label for="pets">Pet Name</label> 
+				 <select name="pets"
+					id="pets" [(ngModel)]="person.petName" (change)="selected()">
+					<option *ngFor="let pet of pets;">{{pet.petName}}</option> 
+					</select> 
+				<!--  <select (change)="selectChange($event)"
+					[(ngModel)]="person.petName">
+					<option *ngFor="let pet of pets" [ngValue]="pet.petName">{{pet.petName}}</option>
+				</select> -->
+
+
+				<!-- <input type="text" name="onlyalphabet"
+				 autocomplete="off" [(ngModel)]="person.petName"
+					class="form-control" id="name" name="name"
+					placeholder="Enter pet name" required #name="ngModel"> -->
+			</div>
+
+ 
+			<button type="submit" [disabled]="!userForm.form.valid" 
+				class="btn btn-info">Submit</button>
+		</form>
+	</div>
 </div>
+<!-- <div class= "alert alert-error"  *ngIf ="!userForm.form.valid">Enter valid values </div> -->

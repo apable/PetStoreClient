@@ -1,15 +1,20 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,ReactiveFormsModule,
+        HttpClientModule,FormsModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        HomeComponent
       ],
     }).compileComponents();
   }));
@@ -30,6 +35,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to PetStoreClient!');
+    expect(compiled.querySelector('h1').textContent).toContain('PET STORE');
   });
 });

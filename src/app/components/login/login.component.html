@@ -1,11 +1,11 @@
-<h2>Login</h2>
-<div class="card my-5"   style="background-color: #FF9800">
+<h2 *ngIf="!authenticationService.isUserLoggedIn() ">Login</h2>
+<div class="card my-5"   style="background-color: #FF9800" 	*ngIf="!authenticationService.isUserLoggedIn() ">
 
 	<div class="card-body bg-light">
 	    <form (ngSubmit)="login()" #userForm="ngForm">
 
 		<div class="form-group">
-			<label for="name">Name</label> <input type="text"
+			<label for="name">Name</label> <input type="text"  
 				[(ngModel)]="user.username" class="form-control" id="user.username"
 				name="user.username" placeholder="Enter your name" required
 				#name="ngModel">

@@ -1,17 +1,11 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { User } from '../models/user';
-import { Router } from '@angular/router';
+import{Injectable}from'@angular/core';import{HttpClient}from'@angular/common/http';import{BehaviorSubject,Observable}from'rxjs';import{map}from'rxjs/operators';import{User}from'../models/user';import{Router}from'@angular/router';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable
+({providedIn:'root'})
 
 export class AuthenticationService {
-	
-    constructor( private router : Router  , private http: HttpClient) {
+
+	constructor( private router : Router  , private http: HttpClient) {
     }
 
     login(username: string, password: string) {
@@ -20,6 +14,7 @@ export class AuthenticationService {
 //                if (user && user.token)
                 if (user )
                 {
+                	sessionStorage.setItem('authenticateUser',username);
                     localStorage.setItem('token', 'JWT');
                     this.isLoginSubject.next(true);
                 }
@@ -29,21 +24,32 @@ export class AuthenticationService {
     
     
     isLoginSubject = new BehaviorSubject<boolean>(this.hasToken());
-    private hasToken() : boolean {
+
+	private hasToken() : boolean {
       return !!localStorage.getItem('token');
     }
     
     
-    logout() : void {
+    logout() : void 
+    {
+    	 sessionStorage.removeItem('authenticateUser');
     	  localStorage.removeItem('token');
     	  this.isLoginSubject.next(false);
     	  this.router.navigate(['/login']);
-    	}
+   }
     
-    isLoggedIn() : Observable<boolean> {
+    isUserLoggedIn ():boolean
+    {
+    	let user = sessionStorage.getItem('authenticateUser');
+    	return	!(user===null);
+    }
+
+    
+    isLoggedIn() : Observable<boolean> 
+    {
     	 return this.isLoginSubject.asObservable();
-    	}
-    	 saveToken(token : string ) :string
+    }
+    saveToken(token : string ) :string
     {
         localStorage.setItem('token', token);
         return token ;

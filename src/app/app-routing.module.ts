@@ -7,16 +7,18 @@ import { PersonListComponent } from './components/person-list/person-list.compon
 import { PetFormComponent } from './components/pet-form/pet-form.component';
 import { PetListComponent } from './components/pet-list/pet-list.component';
 import { AuthGuard } from './auth.guard';
+import { LoginGuard } from './login.guard';
+
 
 const routes: Routes = [ 
                         { path: '', component: HomeComponent, pathMatch: 'full' , canActivate: [AuthGuard]},
 						 {path: 'home', component: HomeComponent , canActivate: [AuthGuard]},
-                         { path: 'login', component: LoginComponent  },
-                         { path: 'addPerson', component: PersonFormComponent },
-                         { path: 'getPerson', component: PersonListComponent },
-                         { path: 'addPet', component: PetFormComponent },
-                         { path: 'getPet', component: PetListComponent },
-                         { path: '**', redirectTo: '' }];
+                         { path: 'login', component: LoginComponent },
+                         { path: 'addPerson', component: PersonFormComponent , canActivate: [AuthGuard]},
+                         { path: 'getPerson', component: PersonListComponent , canActivate: [AuthGuard]},
+                         { path: 'addPet', component: PetFormComponent , canActivate: [AuthGuard]},
+                         { path: 'getPet', component: PetListComponent , canActivate: [AuthGuard]},
+                         { path: '**', redirectTo: 'home' }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

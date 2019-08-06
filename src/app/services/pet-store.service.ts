@@ -10,9 +10,9 @@ import { Observable } from 'rxjs/Observable';
 export class PetStoreService {
 
   constructor(private http: HttpClient) { }
-  
-  public savePerson (person  : Person) {
-	  return this.http.post<Person> ('http://localhost:8080/persons', person);
+//  pet:Pet[];
+  public savePerson (person  : Person ) {
+	  return this.http.post<Person> ('http://localhost:8080/persons', person );
   }
   public savePet (pet  : Pet) {
 	  return this.http.post<Pet> ('http://localhost:8080/pets', pet);

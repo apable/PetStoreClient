@@ -13,7 +13,7 @@
         <label for="color">Color</label>
         <input type="text" [(ngModel)]="pet.petColor" 
           class="form-control" id="color" name="color" placeholder="Enter pet color"
-          required #color="ngModel">
+           #color="ngModel">
       
       </div>
       <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>

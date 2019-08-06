@@ -15,7 +15,7 @@ export class AppComponent {
     title: string;
  
 	constructor(  private router : Router  , public authenticationService : AuthenticationService ) {
-    this.title = 'Spring Boot - Angular Application';
+    this.title = 'PetStoreClient';
     this.isLoggedIn = authenticationService.isLoggedIn();
    }
 	
