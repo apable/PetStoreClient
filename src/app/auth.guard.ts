@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree ,CanActivate ,Router} from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, CanActivate ,Router} from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from './services/authentication.service';
 
@@ -13,32 +13,32 @@ export class AuthGuard implements  CanActivate {
 	{
 		
 	}
-	private handleAuthState():boolean
-	{
-		if(this.isLogin())
-		{
-			this.router.navigate(['/home']);
-			return false;
-		}
-		return true  ;
+	// private handleAuthState():boolean
+	// {
+	// 	if(this.isLogin())
+	// 	{
+	// 		this.router.navigate(['/home']);
+	// 		return false;
+	// 	}
+	// 	return true  ;
 		
-	}
-	private handleNotAuthState():boolean
-	{
-		if(this.isLogin())
-		{
-			this.router.navigate(['/login']);
-			return false;
-		}
-		return  false ;
-	}
-	private isLogin() : boolean
-	{
-		if(this.url.includes('/login'))
-		{ return true;}
+	// }
+	// private handleNotAuthState():boolean
+	// {
+	// 	if(this.isLogin())
+	// 	{
+	// 		this.router.navigate(['/login']);
+	// 		return false;
+	// 	}
+	// 	return  false ;
+	// }
+	// private isLogin() : boolean
+	// {
+	// 	if(this.url.includes('/login'))
+	// 	{ return true;}
 		
-		return false;
-	}
+	// 	return false;
+	// }
 	canActivate(next:ActivatedRouteSnapshot, state: RouterStateSnapshot):Observable<boolean>|Promise<boolean>|boolean 
 	{
 		if(this.authenticationService.isUserLoggedIn())

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Person } from '../models/person';
 import { Pet } from '../models/pet';
 import { Observable } from 'rxjs/Observable';
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 export class PetStoreService {
 
   constructor(private http: HttpClient) { }
-//  pet:Pet[];
+
   public savePerson (person  : Person ) {
 	  return this.http.post<Person> ('http://localhost:8080/persons', person );
   }

@@ -4,7 +4,7 @@ import { Pet } from '../../models/Pet';
 
 import { PetStoreService } from '../../services/pet-store.service';
 import { Router } from '@angular/router';
-import { FormBuilder, Validators ,FormGroup } from "@angular/forms";
+import { FormBuilder } from "@angular/forms";
 
 
 @Component({

@@ -14,11 +14,16 @@
 				is required</div> -->
 
 
+
+
+<!-- 		autocomplete="off" -->
+
+
 		<div class="form-group">
 			<label for="password">Password</label> <input type="text"
-				[(ngModel)]="user.password" class="form-control" id="password"
+				[(ngModel)]="user.password" class="form-control" id="password" 
 				name="password" placeholder="Enter your password" required
-				#password="ngModel">
+				#password="ngModel" autocomplete="off" >
 			<!-- <div [hidden]="!password.pristine" class="alert alert-danger">Password
 					is required</div> -->
 		</div>

@@ -5,6 +5,7 @@
       <div class="form-group required">
         <label class="control-label" for="name">Name</label>
         <input type="text"  autocomplete="off" [(ngModel)]="pet.petName" 
+        onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"
           class="form-control" id="name" name="name" placeholder="Enter pet name"
           required #name="ngModel">
       </div>
@@ -12,6 +13,7 @@
       <div class="form-group">
         <label for="color">Color</label>
         <input type="text" [(ngModel)]="pet.petColor" 
+        onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"
           class="form-control" id="color" name="color" placeholder="Enter pet color"
            #color="ngModel">
       

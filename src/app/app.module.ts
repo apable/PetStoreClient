@@ -10,7 +10,6 @@ import { UserService } from './services/user.service';
 import { AuthenticationService } from './services/authentication.service';
 import { AlertService } from './services/alert.service';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PersonFormComponent } from './components/person-form/person-form.component';
 import { PersonListComponent } from './components/person-list/person-list.component';
 import { PetFormComponent } from './components/pet-form/pet-form.component';

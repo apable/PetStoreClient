@@ -31,8 +31,9 @@
 				<label for="pets">Pet Name</label> 
 				 <select name="pets"
 					id="pets" [(ngModel)]="person.petName" (change)="selected()">
-					<option *ngFor="let pet of pets;">{{pet.petName}}</option> 
+					<option *ngFor="let pet of pets;" [value]="pet.petName" [selected]="person.petName == pet.petName" >{{pet.petName}}</option> 
 					</select> 
+					
 				<!--  <select (change)="selectChange($event)"
 					[(ngModel)]="person.petName">
 					<option *ngFor="let pet of pets" [ngValue]="pet.petName">{{pet.petName}}</option>

@@ -7,8 +7,6 @@ import { PersonListComponent } from './components/person-list/person-list.compon
 import { PetFormComponent } from './components/pet-form/pet-form.component';
 import { PetListComponent } from './components/pet-list/pet-list.component';
 import { AuthGuard } from './auth.guard';
-import { LoginGuard } from './login.guard';
-
 
 const routes: Routes = [ 
                         { path: '', component: HomeComponent, pathMatch: 'full' , canActivate: [AuthGuard]},

@@ -1,4 +1,8 @@
-import{Injectable}from'@angular/core';import{HttpClient}from'@angular/common/http';import{BehaviorSubject,Observable}from'rxjs';import{map}from'rxjs/operators';import{User}from'../models/user';import{Router}from'@angular/router';
+import{Injectable}from'@angular/core';
+import{HttpClient}from'@angular/common/http';
+import{BehaviorSubject,Observable}from'rxjs';
+import{map}from'rxjs/operators';
+import{Router}from'@angular/router';
 
 @Injectable
 ({providedIn:'root'})
